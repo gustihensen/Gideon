@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIDEON AI Assistant</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Three.js for 3D visualization -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Face-api.js for face tracking -->
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Gideon's Face Display -->
+        <div id="gideon-face" class="face-container">
+            <canvas id="faceCanvas"></canvas>
+        </div>
+
+        <!-- Status and Response Area -->
+        <div class="status-container">
+            <p id="status-text">Initializing GIDEON...</p>
+            <div id="response-text"></div>
+        </div>
+
+        <!-- Microphone Orb -->
+        <div class="orb-container">
+            <div id="mic-orb" class="orb">
+                <div class="orb-inner"></div>
+            </div>
+        </div>
+
+        <!-- Budget Tracker Panel (Hidden by default) -->
+        <div id="budget-panel" class="panel hidden">
+            <h3>Budget Tracker</h3>
+            <div id="budget-stats"></div>
+        </div>
+    </div>
+    <!-- Configuration Instructions -->
+    <!--
+    SETUP INSTRUCTIONS:
+    1. Create a 'config' folder in your project root
+    2. Create config/keys.js with:
+       export const OPENAI_KEY = 'your-key-here';
+       export const FIREBASE_CONFIG = {
+           apiKey: "your-firebase-api-key",
+           authDomain: "your-domain.firebaseapp.com",
+           projectId: "your-project-id",
+           storageBucket: "your-storage-bucket",
+           messagingSenderId: "your-sender-id",
+           appId: "your-app-id"
+       };
+    3. Add config/ to .gitignore
+    -->
+
+    <!-- Core Scripts -->
+    <script type="module" src="scripts/gideon-core.js"></script>
+    <script type="module" src="scripts/speech-processing.js"></script>
+    <script type="module" src="scripts/face-animation.js"></script>
+    <script type="module" src="scripts/command-handler.js"></script>
+    <script type="module" src="scripts/budget-tracker.js"></script>
+    <script type="module" src="scripts/cloud-storage.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+</body>
+</html>
+
